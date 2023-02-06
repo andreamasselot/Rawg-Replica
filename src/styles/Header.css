@@ -1,1 +1,15 @@
-
+header {
+  border-bottom: #ff4655 solid 2px;
+  padding-bottom: 20px;
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 300;
+  margin-left: 40px;
+}
+header img {
+  width: 30px;
+  margin-right: 10px;
+}
