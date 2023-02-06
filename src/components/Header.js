@@ -1,8 +1,14 @@
-const Home = () => {
+import "../styles/Header.css";
+
+const Header = () => {
   return (
-    <div>
-      <p>HOME PAGE</p>
-    </div>
+    <>
+      <header>
+        <div className="logo-title">
+          <p>Gamepad</p>
+        </div>
+      </header>
+    </>
   );
 };
-export default Home;
+export default Header;
