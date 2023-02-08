@@ -1,0 +1,16 @@
+.title-searchBar img {
+  width: 80px;
+}
+.game-section-homepage {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.home-game-img {
+  width: 350px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+}
