@@ -1,6 +1,7 @@
 import "../styles/Home.css";
 import logo from "../assets/img/logo.png";
 import Header from "../components/Header";
+import GameCard from "../components/GameCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -41,16 +42,7 @@ const Home = () => {
           <div className="game-section-homepage">
             {data.results.map((elem) => {
               return (
-                <>
-                  <div className="game-container">
-                    <img
-                      src={elem.background_image}
-                      alt="game illlustration"
-                      className="home-game-img"
-                    />
-                    <h2>{elem.name}</h2>
-                  </div>
-                </>
+                <GameCard image={elem.background_image} name={elem.name} />
               );
             })}
           </div>
