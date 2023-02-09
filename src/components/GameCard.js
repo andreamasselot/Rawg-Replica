@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const GameCard = (props) => {
   return (
     <div className="game-container">
-      <Link to={"/game"}>
+      <Link to={`/game/${props.gameId}`}>
         <img
           src={props.image}
           alt="game illlustration"

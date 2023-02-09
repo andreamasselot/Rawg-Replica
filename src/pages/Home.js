@@ -42,7 +42,12 @@ const Home = () => {
           <div className="game-section-homepage">
             {data.results.map((elem) => {
               return (
-                <GameCard image={elem.background_image} name={elem.name} />
+                <GameCard
+                  key={elem.id}
+                  gameId={elem.id}
+                  image={elem.background_image}
+                  name={elem.name}
+                />
               );
             })}
           </div>
