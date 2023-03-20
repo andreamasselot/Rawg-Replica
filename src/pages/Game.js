@@ -1,3 +1,4 @@
+import "../styles/Game.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -31,9 +32,26 @@ const Game = (props) => {
       <section className="gamepage-top-section">
         <div>
           <h1>{data.name}</h1>
+          <img
+            src={data.background_image}
+            alt="videogame illustration"
+            className="gamepage-images"
+          />
         </div>
-        <div>
+        <div className="game-infos-container">
           <GameInfos data={data} />
+        </div>
+      </section>
+      <section className="reviews-section">
+        <div>
+          <h2>Reviews</h2>
+        </div>
+        <div className="best-review">
+          <h3>Most Relevant Review</h3>
+          <div className="review-container">
+            <h4>Title</h4>
+            <p></p>
+          </div>
         </div>
       </section>
     </>

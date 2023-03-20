@@ -1,0 +1,10 @@
+.game-resume-container {
+  border: solid 1px green;
+  display: flex;
+  flex-wrap: wrap;
+}
+.categories-container {
+  justify-content: baseline;
+  gap: 20px;
+  padding: 10px;
+}
