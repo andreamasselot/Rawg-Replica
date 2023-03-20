@@ -14,7 +14,7 @@ const Home = (props) => {
             <h1>Gamepad</h1>
           </div>
           <input type="search" placeholder="Search for a game..." />
-          <p>Search 0000000 games</p>
+          <p>Search {props.data.counts} games</p>
         </section>
         <section>
           <h2>Most Relevance Games</h2>

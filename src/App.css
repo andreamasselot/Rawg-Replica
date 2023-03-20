@@ -3,6 +3,9 @@ body {
   background-color: #202023;
   color: #ffffff;
 }
+input {
+  font-family: "Exo", sans-serif;
+}
 p {
   line-height: 130%;
 }

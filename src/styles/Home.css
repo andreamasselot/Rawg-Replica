@@ -1,10 +1,32 @@
 .title-searchBar img {
   width: 80px;
 }
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-title h1 {
+  font-size: 50px;
+}
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.searchBar input {
+  width: 700px;
+  padding: 10px 10px 10px 40px;
+  border: none;
+  border-radius: 5px;
+  opacity: 0.9;
+  font-size: large;
+}
 .game-section-homepage {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   align-items: center;
   justify-content: center;
 }
@@ -13,4 +35,5 @@
   height: 240px;
   object-fit: cover;
   border-radius: 10px;
+  margin: 10px 0px;
 }

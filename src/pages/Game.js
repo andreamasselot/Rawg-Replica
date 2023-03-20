@@ -50,7 +50,11 @@ const Game = (props) => {
           <h3>Most Relevant Review</h3>
           <div className="review-container">
             <h4>Title</h4>
-            <p></p>
+            <p>
+              review Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Aliquid voluptatibus neque totam possimus amet natus cum obcaecati
+              commodi est eaque.
+            </p>
           </div>
         </div>
       </section>
