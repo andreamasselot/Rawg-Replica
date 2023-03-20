@@ -1,6 +1,6 @@
 const RelatedGames = (props) => {
   return (
-    <div>
+    <div className="related-card-container">
       {props.related.map((elem) => {
         return (
           <div className="related-game-card">
