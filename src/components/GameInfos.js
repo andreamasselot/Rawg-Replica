@@ -38,7 +38,7 @@ const GameInfos = (props) => {
         <div className="platforms-availables">
           <ul>
             {data.metacritic_platforms.map((elem) => {
-              return <li>{elem.platform.name}</li>;
+              return <li key={elem.id}>{elem.platform.name}</li>;
             })}
           </ul>
         </div>
@@ -48,7 +48,7 @@ const GameInfos = (props) => {
         <div className="game-type">
           <ul>
             {data.genres.map((elem) => {
-              return <li>{elem.name}</li>;
+              return <li key={elem.id}>{elem.name}</li>;
             })}
           </ul>
         </div>
@@ -62,7 +62,7 @@ const GameInfos = (props) => {
         <div>
           <ul>
             {data.developers.map((elem) => {
-              return <li>{elem.name}</li>;
+              return <li key={elem.id}>{elem.name}</li>;
             })}
           </ul>
         </div>
@@ -72,14 +72,14 @@ const GameInfos = (props) => {
         <div className="game-publishers">
           <ul>
             {data.publishers.map((elem) => {
-              return <li>{elem.name}</li>;
+              return <li key={elem.id}>{elem.name}</li>;
             })}
           </ul>
         </div>
       </div>
       <div className="categories-container">
         <h3>Age rating</h3>
-        {data.esrb_rating.id}
+        {data.esrb_rating === null ? <p>None</p> : <p>{data.esrb_rating.id}</p>}
       </div>
       <div className="categories-container">
         <h3>About</h3>

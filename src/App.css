@@ -3,9 +3,13 @@ body {
   background-color: #202023;
   color: #ffffff;
 }
+p {
+  line-height: 130%;
+}
 a {
   text-decoration: none;
   cursor: pointer;
+  color: #ffffff;
 }
 h2 {
   font-size: 24px;

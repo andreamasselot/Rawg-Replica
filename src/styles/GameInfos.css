@@ -1,5 +1,4 @@
 .game-resume-container {
-  border: solid 1px green;
   display: flex;
   flex-wrap: wrap;
 }

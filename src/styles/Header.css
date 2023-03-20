@@ -2,7 +2,7 @@ header {
   border-bottom: #ff4655 solid 2px;
   padding-bottom: 20px;
 }
-.logo-title {
+.logo-title a {
   display: flex;
   align-items: center;
   font-size: 30px;
