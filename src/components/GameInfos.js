@@ -25,6 +25,14 @@ const GameInfos = (props) => {
     <p>Loading...</p>
   ) : (
     <div className="game-resume-container">
+      <div>
+        <h1>{data.name}</h1>
+        <img
+          src={data.background_image}
+          alt="videogame illustration"
+          className="gamepage-images"
+        />
+      </div>
       <div className="categories-container">
         <h3>Plateforms</h3>
         <div className="platforms-availables">

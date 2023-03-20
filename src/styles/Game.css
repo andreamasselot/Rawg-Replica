@@ -9,3 +9,25 @@
   border-radius: 20px;
   box-shadow: black 1px 1px 7px;
 }
+
+.related-games-images {
+  width: 200px;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  box-shadow: black 0px 1px 10px;
+}
+.related-game-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.related-game-title {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}

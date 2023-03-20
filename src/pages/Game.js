@@ -4,19 +4,20 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import GameInfos from "../components/GameInfos";
 import Header from "../components/Header";
+import RelatedGames from "../components/RelatedGames";
 
 const Game = (props) => {
   const { gameId } = useParams();
-  const [data, setData] = useState([]);
-  // const [relatedGames, setRelatedGames] = useState({ results: [] });
+  const [data, setData] = useState({ results: [] });
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.rawg.io/api/games/${gameId}?key=179d5f2b8e7b4bb1995903efd90c0599`
+          `https://api.rawg.io/api/games/${gameId}/game-series?key=179d5f2b8e7b4bb1995903efd90c0599`
         );
         setData(response.data);
+        console.log(response.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
@@ -31,21 +32,15 @@ const Game = (props) => {
       <Header />
 
       <section className="gamepage-top-section">
-        <div>
-          <h1>{data.name}</h1>
-          <img
-            src={data.background_image}
-            alt="videogame illustration"
-            className="gamepage-images"
-          />
-        </div>
         <div className="game-infos-container">
           <GameInfos gameId={gameId} />
         </div>
       </section>
       <section className="related-games">
-        <h3>Games like {data.name}</h3>
-        <div className="related-games-container"></div>
+        <h3>Related Games</h3>
+        <div className="related-games-container">
+          <RelatedGames related={data.results} />
+        </div>
       </section>
       <section className="reviews-section">
         <div>
