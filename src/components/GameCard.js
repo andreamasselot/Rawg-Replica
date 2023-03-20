@@ -6,7 +6,7 @@ const GameCard = (props) => {
       <Link to={`/game/${props.gameId}`}>
         <img
           src={props.image}
-          alt="game illlustration"
+          alt="game illustration"
           className="home-game-img"
         />
         <h2>{props.name}</h2>

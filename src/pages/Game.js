@@ -12,7 +12,7 @@ const Game = (props) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.rawg.io/api/games/?key=179d5f2b8e7b4bb1995903efd90c0599&id=${gameId}`
+          `https://api.rawg.io/api/games/${gameId}?key=179d5f2b8e7b4bb1995903efd90c0599`
         );
         setData(response.data);
         setIsLoading(false);
@@ -29,9 +29,11 @@ const Game = (props) => {
       <Header />
       <p>GAME PAGE</p>
       <section className="gamepage-top-section">
-        <div></div>
         <div>
-          <GameInfos />
+          <h1>{data.name}</h1>
+        </div>
+        <div>
+          <GameInfos data={data} />
         </div>
       </section>
     </>
