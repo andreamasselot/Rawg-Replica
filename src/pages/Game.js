@@ -8,7 +8,7 @@ import Header from "../components/Header";
 const Game = (props) => {
   const { gameId } = useParams();
   const [data, setData] = useState([]);
-  const [relatedGames, setRelatedGames] = useState({ results: [] });
+  // const [relatedGames, setRelatedGames] = useState({ results: [] });
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
