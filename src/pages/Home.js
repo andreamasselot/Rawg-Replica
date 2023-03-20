@@ -2,30 +2,9 @@ import "../styles/Home.css";
 import logo from "../assets/img/logo.png";
 import Header from "../components/Header";
 import GameCard from "../components/GameCard";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
-const Home = () => {
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.rawg.io/api/games?key=179d5f2b8e7b4bb1995903efd90c0599`
-        );
-        console.log(response);
-        setData(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    fetchData();
-  }, []);
-  return isLoading ? (
-    <p>Loading...</p>
-  ) : (
+const Home = (props) => {
+  return (
     <>
       <Header />
       <div className="container">
@@ -40,7 +19,7 @@ const Home = () => {
         <section>
           <h2>Most Relevance Games</h2>
           <div className="game-section-homepage">
-            {data.results.map((elem) => {
+            {props.data.results.map((elem) => {
               return (
                 <GameCard
                   key={elem.id}
