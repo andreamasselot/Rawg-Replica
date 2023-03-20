@@ -1,7 +1,6 @@
 import "../styles/GameInfos.css";
 
 const GameInfos = (props) => {
-  console.log(props.data.metacritic_platforms);
   return (
     <div className="game-resume-container">
       <div className="categories-container">

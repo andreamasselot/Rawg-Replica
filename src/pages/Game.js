@@ -8,6 +8,7 @@ import Header from "../components/Header";
 const Game = (props) => {
   const { gameId } = useParams();
   const [data, setData] = useState([]);
+  const [relatedGames, setRelatedGames] = useState({ results: [] });
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +42,10 @@ const Game = (props) => {
         <div className="game-infos-container">
           <GameInfos data={data} />
         </div>
+      </section>
+      <section className="related-games">
+        <h3>Games like {data.name}</h3>
+        <div className="related-games-container"></div>
       </section>
       <section className="reviews-section">
         <div>
