@@ -29,7 +29,7 @@ const Game = (props) => {
   ) : (
     <>
       <Header />
-      <p>GAME PAGE</p>
+
       <section className="gamepage-top-section">
         <div>
           <h1>{data.name}</h1>
@@ -40,7 +40,7 @@ const Game = (props) => {
           />
         </div>
         <div className="game-infos-container">
-          <GameInfos data={data} />
+          <GameInfos gameId={gameId} />
         </div>
       </section>
       <section className="related-games">

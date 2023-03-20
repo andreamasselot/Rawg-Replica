@@ -1,13 +1,35 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "../styles/GameInfos.css";
 
 const GameInfos = (props) => {
-  return (
+  const { gameId } = useParams();
+  const [data, setData] = useState({ results: [] });
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.rawg.io/api/games/${gameId}?key=179d5f2b8e7b4bb1995903efd90c0599`
+        );
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, [gameId]);
+  return isLoading ? (
+    <p>Loading...</p>
+  ) : (
     <div className="game-resume-container">
       <div className="categories-container">
         <h3>Plateforms</h3>
         <div className="platforms-availables">
           <ul>
-            {props.data.metacritic_platforms.map((elem) => {
+            {data.metacritic_platforms.map((elem) => {
               return <li>{elem.platform.name}</li>;
             })}
           </ul>
@@ -17,7 +39,7 @@ const GameInfos = (props) => {
         <h3>Genres</h3>
         <div className="game-type">
           <ul>
-            {props.data.genres.map((elem) => {
+            {data.genres.map((elem) => {
               return <li>{elem.name}</li>;
             })}
           </ul>
@@ -25,13 +47,13 @@ const GameInfos = (props) => {
       </div>
       <div className="categories-container">
         <h3>Released date</h3>
-        <p>{props.data.released}</p>
+        <p>{data.released}</p>
       </div>
       <div className="categories-container">
         <h3>Developer</h3>
         <div>
           <ul>
-            {props.data.developers.map((elem) => {
+            {data.developers.map((elem) => {
               return <li>{elem.name}</li>;
             })}
           </ul>
@@ -41,7 +63,7 @@ const GameInfos = (props) => {
         <h3>Publisher</h3>
         <div className="game-publishers">
           <ul>
-            {props.data.publishers.map((elem) => {
+            {data.publishers.map((elem) => {
               return <li>{elem.name}</li>;
             })}
           </ul>
@@ -49,11 +71,11 @@ const GameInfos = (props) => {
       </div>
       <div className="categories-container">
         <h3>Age rating</h3>
-        {props.data.esrb_rating.id}
+        {data.esrb_rating.id}
       </div>
       <div className="categories-container">
         <h3>About</h3>
-        <p>{props.data.description_raw}</p>
+        <p>{data.description_raw}</p>
       </div>
     </div>
   );
