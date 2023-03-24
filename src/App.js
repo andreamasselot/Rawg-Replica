@@ -13,7 +13,7 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.rawg.io/api/games?key=179d5f2b8e7b4bb1995903efd90c0599&page_size=33`
+          `https://api.rawg.io/api/games?key=179d5f2b8e7b4bb1995903efd90c0599&page_size=36`
         );
         setData(response.data);
       } catch (error) {
